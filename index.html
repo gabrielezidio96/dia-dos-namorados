@@ -1,1 +1,106 @@
-Dia dos namorados
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dia dos Namorados</title>
+        <style>
+            .bg{
+            background-image: url("./src/bg/bg.jpeg");        
+            width: fit-content;  
+            height: fit-content;
+            display: block;         
+            }
+            .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+            max-width: 1000px;
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+            flex: 25%;
+            max-width: 50%;
+            padding: 0 4px;
+            }
+
+            .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) and (min-width: 600px){
+            .column {
+                flex: 50%;
+                max-width: 100%;
+            }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px){
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <center>
+                <div><h1 style="color:#b40000;font-size: 56px; font-weight: normal">Feliz dia dos Namorados! </h1></div>
+                <div style="color:#b40000; font-size: 48px; font-weight: normal" id="dday"></div>
+            </center>
+            <center>
+                <div class="row">
+                    <div class="column">
+                        <img src="./src/pics/IMG_20200308_122215_997.jpg">
+                        <img src="./src/pics/IMG_20200308_122236_573.jpg">
+                        <img src="./src/pics/IMG-20200308-WA0057.jpg">
+                    </div>
+                    <div class="column">
+                        <img src="./src/pics/IMG_20200321_132923_278.jpg">
+                        <img src="./src/pics/IMG_20200321_133344_714.jpg">
+                        <img src="./src/pics/IMG-20200308-WA0051.jpg"> 
+                    </div>
+                </div>
+            </center>
+            <div>
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("June 12, 2020 9:00:00").getTime();
+            
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+            
+                    // Get todays date and time
+                    var now = new Date().getTime();
+            
+                    // Find the distance between now an the count down date
+                    var distance = countDownDate - now;
+            
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+                    // Display the result in the element with id="demo"
+                    document.getElementById("dday").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+            
+                    // If the count down is finished, write some text 
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("dday").innerHTML = "SITE NA TEIA";
+                    }
+                    }, 1000);
+                </script>
+            </div>
+        </body>
+        <footer>
+            <h2 style="color:#b40000;font-size: 28px; font-weight: normal;text-align: center">Ps: Te amo muito mais amor</h2>
+        </footer>
+    </div>
+</html>
